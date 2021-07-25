@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>SNS</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1">API ONLY SNS</span>
+    </div>
+  </nav>
+</header>
+<main class="container my-5" id="app">
+  <div class="post-form-wrapper mb-3 d-flex">
+    <div>
+      <input class="text-input" type="text" v-model="postText" placeholder="投稿内容を入力">
+    </div>
+    <div class="ms-3">
+      <button class="btn btn-primary" @click="post">投稿</button>
+    </div>
+  </div>
+  <div id="message-list">
+    <div class="message card mb-3" v-for="message in messages">
+      <message-list-item v-bind:message="message"></message-list-item>
+    </div>
+  </div>
+</main>
+<footer>
+  <div class="container-fluid bg-light text-center py-5">
+    created by KINOKO
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/vue@next"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
